@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <title>PHP Emailer</title>
+</head>
+<body>
+
+<h1>Student Registration Form</h1>
+
+<form action="sendmail.php" method="post">
+
+  <label>First Name:</label>
+  <input type="text" name="firstname" required><br><br>
+
+  <label>Last Name:</label>
+  <input type="text" name="lastname" required><br><br>
+
+  <label>Roll No:</label>
+  <input type="number" name="rollno" required><br><br>
+
+  <label>Class:</label>
+  <input type="radio" name="class" value="FYIT" required> FYIT
+  <input type="radio" name="class" value="SYIT"> SYIT
+  <input type="radio" name="class" value="TYIT"> TYIT
+  <br><br>
+
+  <label>Email:</label>
+  <input type="email" name="email" required><br><br>
+
+  <input type="submit" name="send" value="Register">
+
+</form>
+
+</body>
+</html>
