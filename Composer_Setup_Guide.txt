@@ -1,0 +1,87 @@
+COMPOSER & ENV SETUP GUIDE Project: PHP Emailer Project ——————————————–
+
+1) INSTALL COMPOSER (ONE TIME ONLY)
+
+1.  Go to https://getcomposer.org
+2.  Download Composer-Setup.exe
+3.  During installation, select: C:.exe
+4.  Finish installation.
+5.  Verify installation: Open CMD and run: composer -v
+
+If version is displayed, Composer is installed correctly.
+
+------------------------------------------------------------------------
+
+2) INITIALIZE COMPOSER IN YOUR PROJECT
+
+1.  Open Command Prompt.
+
+2.  Navigate to your project folder:
+
+    cd C:-emailer-project
+
+3.  Run:
+
+    composer init
+
+4.  Press Enter for default values.
+
+This creates: composer.json
+
+------------------------------------------------------------------------
+
+3) INSTALL REQUIRED PACKAGES
+
+Run the following inside your project folder:
+
+composer require phpmailer/phpmailer composer require vlucas/phpdotenv
+
+After installation, the following will be created:
+
+vendor/ composer.lock
+
+Inside vendor/ you will find: autoload.php
+
+------------------------------------------------------------------------
+
+4) USE COMPOSER AUTOLOAD IN PHP
+
+At the top of your PHP file (sendmail.php), add:
+
+require DIR . ‘/vendor/autoload.php’;
+
+------------------------------------------------------------------------
+
+5) CREATE .env FILE
+
+In your project root (same level as sendmail.php), create:
+
+.env
+
+Add the following (no spaces around =):
+
+MAIL_HOST=smtp.gmail.com MAIL_PORT=587
+MAIL_USERNAME=your_email@gmail.com MAIL_PASSWORD=your_app_password
+MAIL_ENCRYPTION=tls MAIL_FROM=your_email@gmail.com MAIL_FROM_NAME=PHP
+Emailer MAIL_SUBJECT=Student Registration Form
+
+IMPORTANT: - Do NOT upload .env to GitHub - Add .env to .gitignore
+
+------------------------------------------------------------------------
+
+6) SAMPLE .gitignore FILE
+
+Add this file to your project root:
+
+vendor/ .env
+
+------------------------------------------------------------------------
+
+FINAL PROJECT STRUCTURE
+
+php-emailer-project/ │ ├── vendor/ ├── composer.json ├── composer.lock
+├── .env ├── .gitignore ├── index.html └── sendmail.php
+
+------------------------------------------------------------------------
+
+You now have a professional Composer-based PHP setup.
